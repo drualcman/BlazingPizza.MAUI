@@ -9,7 +9,8 @@ public static class DependencyConteiner
         services
             .AddRepositoriesServices(configuration, connectionStringName)
             .AddUseCases()
-            .AddControllersServices();
+            .AddControllersServices()
+            .AddPresentersServices(configuration["ImagesBaseUrl"]);
         return services;
     }
 }

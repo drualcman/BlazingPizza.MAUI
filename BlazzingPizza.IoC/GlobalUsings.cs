@@ -3,4 +3,5 @@ global using BlazingPizza.UseCases;
 global using BlazzingPizzaControllers;
 global using Microsoft.Extensions.Configuration;
 global using Microsoft.Extensions.DependencyInjection;
+global using BlazingPizza.Presenters;
 
