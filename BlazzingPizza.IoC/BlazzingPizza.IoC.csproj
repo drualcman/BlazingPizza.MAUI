@@ -13,6 +13,7 @@
   <ItemGroup>
     <ProjectReference Include="..\BlazingPizza.Components\BlazingPizza.Components.csproj" />
     <ProjectReference Include="..\BlazingPizza.EFCore.Repositories\BlazingPizza.EFCore.Repositories.csproj" />
+    <ProjectReference Include="..\BlazingPizza.Presenters\BlazingPizza.Presenters.csproj" />
     <ProjectReference Include="..\BlazingPizza.UseCases\BlazingPizza.UseCases.csproj" />
     <ProjectReference Include="..\BlazzingPizzaControllers\BlazzingPizzaControllers.csproj" />
   </ItemGroup>
