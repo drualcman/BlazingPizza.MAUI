@@ -28,15 +28,19 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Repositories", "Repositorie
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Controllers", "Controllers", "{633D3AB8-CD73-4E50-AA9E-6535B7F4BC0B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazzingPizzaControllers", "BlazzingPizzaControllers\BlazzingPizzaControllers.csproj", "{B40E6D37-07DF-4E3E-8474-4C23C116662C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazzingPizzaControllers", "BlazzingPizzaControllers\BlazzingPizzaControllers.csproj", "{B40E6D37-07DF-4E3E-8474-4C23C116662C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazzingPizza.IoC", "BlazzingPizza.IoC\BlazzingPizza.IoC.csproj", "{2D112C39-AF55-4622-B3F3-AB96D55578A4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazzingPizza.IoC", "BlazzingPizza.IoC\BlazzingPizza.IoC.csproj", "{2D112C39-AF55-4622-B3F3-AB96D55578A4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazingPizza.WebApi", "BlazingPizza.WebApi\BlazingPizza.WebApi.csproj", "{28A9DB88-09C0-4845-B256-0CFD5538A010}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazingPizza.WebApi", "BlazingPizza.WebApi\BlazingPizza.WebApi.csproj", "{28A9DB88-09C0-4845-B256-0CFD5538A010}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presenters", "Presenters", "{CE5BA910-6B11-4746-ABDA-1F19F20A47DE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazingPizza.Presenters", "BlazingPizza.Presenters\BlazingPizza.Presenters.csproj", "{61C565BC-96FA-43B6-BAB7-875FE5B48A54}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazingPizza.Presenters", "BlazingPizza.Presenters\BlazingPizza.Presenters.csproj", "{61C565BC-96FA-43B6-BAB7-875FE5B48A54}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazingPizza.MAUI", "BlazingPizza.MAUI\BlazingPizza.MAUI.csproj", "{81EADE08-856A-4E65-AA11-9D23EF198EEA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorApp1", "BlazorApp1\BlazorApp1.csproj", "{0B309155-68C5-4749-9C47-4CB591BB57AC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -80,6 +84,16 @@ Global
 		{61C565BC-96FA-43B6-BAB7-875FE5B48A54}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{61C565BC-96FA-43B6-BAB7-875FE5B48A54}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{61C565BC-96FA-43B6-BAB7-875FE5B48A54}.Release|Any CPU.Build.0 = Release|Any CPU
+		{81EADE08-856A-4E65-AA11-9D23EF198EEA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{81EADE08-856A-4E65-AA11-9D23EF198EEA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{81EADE08-856A-4E65-AA11-9D23EF198EEA}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{81EADE08-856A-4E65-AA11-9D23EF198EEA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{81EADE08-856A-4E65-AA11-9D23EF198EEA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{81EADE08-856A-4E65-AA11-9D23EF198EEA}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{0B309155-68C5-4749-9C47-4CB591BB57AC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0B309155-68C5-4749-9C47-4CB591BB57AC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0B309155-68C5-4749-9C47-4CB591BB57AC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0B309155-68C5-4749-9C47-4CB591BB57AC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -99,9 +113,11 @@ Global
 		{28A9DB88-09C0-4845-B256-0CFD5538A010} = {B5E264CE-3FC2-4889-A9B9-FE9929351E59}
 		{CE5BA910-6B11-4746-ABDA-1F19F20A47DE} = {556DDD39-5D3D-4D4E-980E-7047A3B6A11F}
 		{61C565BC-96FA-43B6-BAB7-875FE5B48A54} = {CE5BA910-6B11-4746-ABDA-1F19F20A47DE}
+		{81EADE08-856A-4E65-AA11-9D23EF198EEA} = {B5E264CE-3FC2-4889-A9B9-FE9929351E59}
+		{0B309155-68C5-4749-9C47-4CB591BB57AC} = {B5E264CE-3FC2-4889-A9B9-FE9929351E59}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		        SolutionGuid = {61F7FB11-1E47-470C-91E2-47F8143E1572}
 		SolutionGuid = {6725F6D6-4A91-41E0-9AAD-F2FA1EED341D}
+		        SolutionGuid = {61F7FB11-1E47-470C-91E2-47F8143E1572}
 	EndGlobalSection
 EndGlobal

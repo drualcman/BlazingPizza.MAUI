@@ -1,6 +1,5 @@
 ﻿<Router AppAssembly="@typeof(Main).Assembly"
-        AdditionalAssemblies="new[] { typeof(BlazingPizza.PagesViews.Pages.Index).Assembly, 
-                                      typeof(BlazingPizza.Components.Shared.MainLayout).Assembly }">
+        AdditionalAssemblies="new[] { typeof(BlazingPizza.PagesViews.Pages.Index).Assembly }">
     <Found Context="routeData">
         <RouteView RouteData="@routeData"
                    DefaultLayout="@typeof(BlazingPizza.Components.Shared.MainLayout)" />
