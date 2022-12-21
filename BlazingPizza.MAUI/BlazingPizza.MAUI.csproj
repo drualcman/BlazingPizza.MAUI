@@ -54,7 +54,7 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\BlazingPizza.PagesViews\BlazingPizza.PagesViews.csproj" />
+      <ProjectReference Include="..\BlazingPizza.Razor.View\BlazingPizza.Razor.View.csproj" />
     </ItemGroup>
 
 </Project>

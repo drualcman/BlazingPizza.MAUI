@@ -1,0 +1,27 @@
+﻿<div class="main">
+    <ul class="pizza-cards">
+        @if(ViewModel.Specials is not null)
+        {
+            foreach(PizzaSpecialDto special in ViewModel.Specials)
+            {
+                <li style="background-image:url('@special.ImageUrl')">
+                    <div class="pizza-info">
+                        <span class="title">@special.Name</span>
+                        @special.Description
+                        <span class="price">
+                            @special.GetFormattedBasePrice()
+                        </span>
+                    </div>
+                </li>                            
+            }
+        }
+        else @if(ViewModel.Specials is null)
+        {
+            <li>Cargando...</li>
+        }
+        else
+        {
+            <li>No hay pizzas</li>
+        }
+    </ul>
+</div>
