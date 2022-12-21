@@ -15,4 +15,8 @@
     <ProjectReference Include="..\BlazzingPizza.IoC\BlazzingPizza.IoC.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="wwwroot\images\pizzas\" />
+  </ItemGroup>
+
 </Project>

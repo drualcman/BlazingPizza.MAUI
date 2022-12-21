@@ -6,7 +6,7 @@ public static class ServicesConfiguration
     {        
         builder.Services.AddEndpointsApiExplorer();          
         builder.Services.AddSwaggerGen();  
-        builder.Services.AddBlazingPizzaServices(builder.Configuration, "BlazingPizza");
+        builder.Services.AddBlazingPizzaServices(builder.Configuration, "BlazingPizza", "ImagesBaseUrl");
         builder.Services.AddCors(options =>
         {
             options.AddDefaultPolicy(config => 

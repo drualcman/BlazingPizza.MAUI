@@ -3,18 +3,15 @@
 public class GetSpecialsInteractor : IGetSpecialsInputPort
 {
     readonly IBlazingPizzaRepository Repository;
-    readonly IGetSpecialsPresenter Presenter;
 
-    public GetSpecialsInteractor(IBlazingPizzaRepository repository, IGetSpecialsPresenter presenter)
+    public GetSpecialsInteractor(IBlazingPizzaRepository repository)
     {
         Repository = repository;
-        Presenter = presenter;
     }
 
     public async Task<List<PizzaSpecialDto>> GetSpecials()
     {
         List<PizzaSpecialDto> result = await Repository.GetSpecials();
-        result.OrderByDescending(s => s.BasePrice).ToList();
-        return await Presenter.GetSpecials(result);
+        return result.OrderByDescending(s => s.BasePrice).ToList();
     }
 }

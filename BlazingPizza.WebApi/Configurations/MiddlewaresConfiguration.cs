@@ -10,6 +10,7 @@ public static class MiddlewaresConfiguration
             app.UseSwaggerUI();
         }
         app.UseHttpsRedirection();
+        app.UseStaticFiles();
         app.UseSpecialsEndPoints();
         app.UseCors();
         return app;
