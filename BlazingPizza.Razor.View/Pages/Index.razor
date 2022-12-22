@@ -1,6 +1,14 @@
 ﻿@page "/"
                          
 <PageTitle>Blazing Pizza</PageTitle>
-<Specials />
+<ErrorBoundary>
+    <ChildContent>
+        <Specials />
+    </ChildContent>
+    <ErrorContent>
+        @context.Message
+    </ErrorContent>
+</ErrorBoundary>
+
 
 
