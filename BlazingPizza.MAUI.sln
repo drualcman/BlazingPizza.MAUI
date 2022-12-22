@@ -36,15 +36,19 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazingPizza.Presenters", "
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazingPizza.MAUI", "BlazingPizza.MAUI\BlazingPizza.MAUI.csproj", "{81EADE08-856A-4E65-AA11-9D23EF198EEA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazingPizza.Htttp.Repositories", "BlazingPizza.Htttp.Repositories\BlazingPizza.Htttp.Repositories.csproj", "{3285BE82-1659-44A0-B2E9-049ECE752279}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazingPizza.Htttp.Repositories", "BlazingPizza.Htttp.Repositories\BlazingPizza.Htttp.Repositories.csproj", "{3285BE82-1659-44A0-B2E9-049ECE752279}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ViewModels", "ViewModels", "{F8B2B582-D6CB-42E1-B24D-67501E2B043C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazingPizza.ViewModels", "BlazingPizza.ViewModels\BlazingPizza.ViewModels.csproj", "{F1CA7D67-06D5-4A73-8210-DB1277EA0977}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazingPizza.ViewModels", "BlazingPizza.ViewModels\BlazingPizza.ViewModels.csproj", "{F1CA7D67-06D5-4A73-8210-DB1277EA0977}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Views", "Views", "{2076266C-4D88-43F5-8D9F-6783CD8ACA64}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazingPizza.Razor.View", "BlazingPizza.Razor.View\BlazingPizza.Razor.View.csproj", "{A42177B6-6542-4B77-8246-49B3B0150D78}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazingPizza.Razor.View", "BlazingPizza.Razor.View\BlazingPizza.Razor.View.csproj", "{A42177B6-6542-4B77-8246-49B3B0150D78}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazingPizza.BlazorClient", "BlazingPizza.BlazorClient\BlazingPizza.BlazorClient.csproj", "{E783F23B-8B3E-4FAA-B1C9-C1C90074C869}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazingPizza.WPFClient", "BlazingPizza.WPFClient\BlazingPizza.WPFClient.csproj", "{E8E99674-003C-4F17-8549-24D62611B506}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -98,6 +102,14 @@ Global
 		{A42177B6-6542-4B77-8246-49B3B0150D78}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A42177B6-6542-4B77-8246-49B3B0150D78}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A42177B6-6542-4B77-8246-49B3B0150D78}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E783F23B-8B3E-4FAA-B1C9-C1C90074C869}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E783F23B-8B3E-4FAA-B1C9-C1C90074C869}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E783F23B-8B3E-4FAA-B1C9-C1C90074C869}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E783F23B-8B3E-4FAA-B1C9-C1C90074C869}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E8E99674-003C-4F17-8549-24D62611B506}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E8E99674-003C-4F17-8549-24D62611B506}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E8E99674-003C-4F17-8549-24D62611B506}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E8E99674-003C-4F17-8549-24D62611B506}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -121,9 +133,11 @@ Global
 		{F1CA7D67-06D5-4A73-8210-DB1277EA0977} = {F8B2B582-D6CB-42E1-B24D-67501E2B043C}
 		{2076266C-4D88-43F5-8D9F-6783CD8ACA64} = {556DDD39-5D3D-4D4E-980E-7047A3B6A11F}
 		{A42177B6-6542-4B77-8246-49B3B0150D78} = {2076266C-4D88-43F5-8D9F-6783CD8ACA64}
+		{E783F23B-8B3E-4FAA-B1C9-C1C90074C869} = {B5E264CE-3FC2-4889-A9B9-FE9929351E59}
+		{E8E99674-003C-4F17-8549-24D62611B506} = {B5E264CE-3FC2-4889-A9B9-FE9929351E59}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		        SolutionGuid = {61F7FB11-1E47-470C-91E2-47F8143E1572}
 		SolutionGuid = {6725F6D6-4A91-41E0-9AAD-F2FA1EED341D}
+		        SolutionGuid = {61F7FB11-1E47-470C-91E2-47F8143E1572}
 	EndGlobalSection
 EndGlobal

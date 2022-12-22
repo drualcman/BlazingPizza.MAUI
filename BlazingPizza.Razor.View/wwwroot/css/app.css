@@ -1,0 +1,11 @@
+﻿@import url('font/quicksand.css');
+
+body, html {
+    height: 100%;
+}
+
+body {
+    padding-top: 5rem;
+    font-family: 'Quicksand';
+    overflow-y: scroll;
+}
