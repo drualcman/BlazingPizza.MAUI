@@ -1,4 +1,9 @@
-﻿namespace BlazingPizza.MAUI;
+﻿using BlazingPizza.Htttp.Repositories;
+using BlazingPizza.ViewModels;
+using Microsoft.Extensions.Configuration;
+using System.Reflection;
+
+namespace BlazingPizza.MAUI;
 
 public static class MauiProgram
 {
@@ -19,11 +24,47 @@ public static class MauiProgram
         builder.Logging.AddDebug();
 #endif
 
-        string dbPath = System.IO.Path.Combine("Resources", "appsettings.json");
-        builder.Configuration.AddJsonFile(dbPath);
+        string nameSpace = typeof(MainPage).Namespace;
+        Assembly assemblySource = Assembly.GetExecutingAssembly();
+        using Stream stream = assemblySource.GetManifestResourceStream($"{nameSpace}.appsettings.json");
+        IConfiguration configuration = new ConfigurationBuilder()
+            .AddJsonStream(stream)
+            .Build();
+        
+        builder.Services.AddHttpRepositoriesServices(configuration.GetSection("BlazzingPizzaEndpoints"),
+#if ANDROID
+            builder => 
+            {
+                builder.ConfigurePrimaryHttpMessageHandler(() => new HttpsClientHandlerService().GetPlatformMessageHandler());
+            }
+#elif IOS
+            builder => 
+            {
+                builder.ConfigurePrimaryHttpMessageHandler(() => new HttpsClientHandlerService().GetPlatformMessageHandler());
+            }
+#else
+null
+#endif
+            );
+        builder.Services.AddViewModelsServices();
 
-        builder.Services.AddBlazingPizzaServices(builder.Configuration.GetSection("BlazzingPizzaEndpoints"));
+        //builder.Configuration.AddJsonStream(GetResourceStream("appsettings.json"));
+        //builder.Services.AddBlazingPizzaServices(builder.Configuration.GetSection("BlazzingPizzaEndpoints"));
 
         return builder.Build();
+    }
+
+     public static Stream GetResourceStream(string resourceRelativeUri)
+    {
+        // resource like: images/icon-512.png <- file need to be embebed into the assembly
+        // converto into: images.icon-512.png
+        resourceRelativeUri = resourceRelativeUri.Replace("/", ".");
+        Type appType = typeof(MauiProgram);
+        Assembly assemblySource = Assembly.GetAssembly(appType);
+        // recovery from namespace: BlazingPizza.Razor.View.wwwroot.images.icon-512.png <- this is my embebed file
+        Stream result = assemblySource
+            .GetManifestResourceStream(
+            $"{appType.Namespace}.{resourceRelativeUri}");
+        return result;
     }
 }

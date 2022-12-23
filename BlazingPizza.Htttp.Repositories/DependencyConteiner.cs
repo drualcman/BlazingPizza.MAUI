@@ -5,10 +5,15 @@ namespace BlazingPizza.Htttp.Repositories;
 public static class DependencyConteiner
 {
     public static IServiceCollection AddHttpRepositoriesServices(this IServiceCollection services,
-        IConfigurationSection configurationSection)
+        IConfigurationSection configurationSection,
+        Action<IHttpClientBuilder> builderConfiguration = null)
     {
-        services.AddHttpClient<IBlazingPizzaRepository, BlazingPizzaRepository>(HttpClient => 
-                                                     new BlazingPizzaRepository(HttpClient, configurationSection));
+        IHttpClientBuilder builder =
+            services.AddHttpClient<IBlazingPizzaRepository, BlazingPizzaRepository>(HttpClient => 
+                                                        new BlazingPizzaRepository(HttpClient, configurationSection));
+
+        builderConfiguration?.Invoke(builder);
+
         return services;
     }
 }
