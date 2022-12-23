@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\BlazingPizza.Htttp.Repositories\BlazingPizza.Htttp.Repositories.csproj" />
+    <ProjectReference Include="..\BlazingPizza.Razor.View\BlazingPizza.Razor.View.csproj" />
+    <ProjectReference Include="..\BlazingPizza.ViewModels\BlazingPizza.ViewModels.csproj" />
+  </ItemGroup>
+
+</Project>

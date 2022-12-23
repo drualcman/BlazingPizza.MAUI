@@ -12,9 +12,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\BlazingPizza.Htttp.Repositories\BlazingPizza.Htttp.Repositories.csproj" />
-    <ProjectReference Include="..\BlazingPizza.Razor.View\BlazingPizza.Razor.View.csproj" />
-    <ProjectReference Include="..\BlazingPizza.ViewModels\BlazingPizza.ViewModels.csproj" />
+    <ProjectReference Include="..\BlazingPizza.UI.IoC\BlazingPizza.UI.IoC.csproj" />
   </ItemGroup>
 
   <ItemGroup>

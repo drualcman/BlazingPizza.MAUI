@@ -1,7 +1,4 @@
-﻿using BlazingPizza.MAUI.Properties;
-using Microsoft.Extensions.Configuration;
-
-namespace BlazingPizza.MAUI;
+﻿namespace BlazingPizza.MAUI;
 
 public static class MauiProgram
 {
@@ -25,8 +22,7 @@ public static class MauiProgram
         string dbPath = System.IO.Path.Combine("Resources", "appsettings.json");
         builder.Configuration.AddJsonFile(dbPath);
 
-        builder.Services.AddHttpRepositoriesServices(builder.Configuration.GetSection("BlazzingPizzaEndpoints"))
-                .AddViewModelsServices();
+        builder.Services.AddBlazingPizzaServices(builder.Configuration.GetSection("BlazzingPizzaEndpoints"));
 
         return builder.Build();
     }

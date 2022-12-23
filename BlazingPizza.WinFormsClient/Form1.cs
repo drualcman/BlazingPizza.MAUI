@@ -1,13 +1,11 @@
-﻿using BlazingPizza.UI.IoC;
+using BlazingPizza.Razor.View.Helpers;
+using BlazingPizza.UI.IoC;
 
-namespace BlazingPizza.WPFClient;
+namespace BlazingPizza.WinFormsClient;
 
-/// <summary>
-/// Interaction logic for MainWindow.xaml
-/// </summary>
-public partial class MainWindow : Window
+public partial class Form1 : Form
 {
-    public MainWindow()
+    public Form1()
     {
         InitializeComponent();
         RegisterServices();
@@ -21,18 +19,20 @@ public partial class MainWindow : Window
             .Build();
 
         IServiceCollection services = new ServiceCollection();
-        services.AddWpfBlazorWebView();
+        services.AddWindowsFormsBlazorWebView();
         services.AddBlazingPizzaServices(configuration.GetSection("BlazzingPizzaEndpoints"));
 
-        Resources.Add("Services", services.BuildServiceProvider());
-    }
-
+        blazorWebView1.HostPage = "wwwroot\\index.html";
+        blazorWebView1.Services = services.BuildServiceProvider();
+        blazorWebView1.RootComponents.Add<App>("#app");
+    }    
     void SetIcon()
     {
         Stream stream = WWWRoot.GetResourceStream("images/icon-512.png");
         if(stream != null)
         {
-            Icon = BitmapFrame.Create(stream);
+            Bitmap bitmap = new Bitmap(stream);
+            Icon = Icon.FromHandle(bitmap.GetHicon());
         }
     }
 }
