@@ -1,6 +1,9 @@
-﻿using Microsoft.Extensions.Configuration;
+﻿using BlazingPizza.Razor.View.Helpers;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using System.IO;
 using System.Windows;
+using System.Windows.Media.Imaging;
 
 namespace BlazingPizza.WPFClient
 {
@@ -13,6 +16,7 @@ namespace BlazingPizza.WPFClient
         {
             InitializeComponent();
             RegisterServices();
+            SetIcon();
         }
 
         void RegisterServices()
@@ -27,6 +31,15 @@ namespace BlazingPizza.WPFClient
             services.AddViewModelsServices();
 
             Resources.Add("Services", services.BuildServiceProvider());
+        }
+
+        void SetIcon()
+        {
+            Stream stream = WWWRoot.GetResourceStream("images/icon-512.png");
+            if(stream != null)
+            {
+                Icon = BitmapFrame.Create(stream);
+            }
         }
     }
 }

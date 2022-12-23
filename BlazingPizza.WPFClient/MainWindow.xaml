@@ -5,7 +5,6 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BlazingPizza.WPFClient"
         mc:Ignorable="d"
-        Icon="icon-512.png"
         xmlns:blazor="clr-namespace:Microsoft.AspNetCore.Components.WebView.Wpf;assembly=Microsoft.AspNetCore.Components.WebView.Wpf"
         xmlns:pages="clr-namespace:BlazingPizza.Razor.View;assembly=BlazingPizza.Razor.View"
         Title="Blazing Pizzas" Height="450" Width="800">
