@@ -1,6 +1,6 @@
 ﻿using BlazingPizza.Htttp.Repositories;
+using BlazingPizza.MAUI.Handlers;
 using BlazingPizza.ViewModels;
-using Microsoft.Extensions.Configuration;
 using System.Reflection;
 
 namespace BlazingPizza.MAUI;
@@ -23,24 +23,20 @@ public static class MauiProgram
         builder.Services.AddBlazorWebViewDeveloperTools();
         builder.Logging.AddDebug();
 #endif
-
-        string nameSpace = typeof(MainPage).Namespace;
-        Assembly assemblySource = Assembly.GetExecutingAssembly();
-        using Stream stream = assemblySource.GetManifestResourceStream($"{nameSpace}.appsettings.json");
-        IConfiguration configuration = new ConfigurationBuilder()
-            .AddJsonStream(stream)
-            .Build();
-        
-        builder.Services.AddHttpRepositoriesServices(configuration.GetSection("BlazzingPizzaEndpoints"),
+                                                                                                  
+        builder.Configuration.AddJsonStream(GetResourceStream("appsettings.json"));
+        builder.Services.AddHttpRepositoriesServices(builder.Configuration.GetSection("BlazzingPizzaEndpoints"),
 #if ANDROID
-            builder => 
+            builder =>
             {
                 builder.ConfigurePrimaryHttpMessageHandler(() => new HttpsClientHandlerService().GetPlatformMessageHandler());
+                builder.AddHttpMessageHandler(() => new CustomHttpMessageHandler());
             }
 #elif IOS
             builder => 
             {
-                builder.ConfigurePrimaryHttpMessageHandler(() => new HttpsClientHandlerService().GetPlatformMessageHandler());
+                builder.ConfigurePrimaryHttpMessageHandler(() => new HttpsClientHandlerService().GetPlatformMessageHandler()); 
+                builder.AddHttpMessageHandler(() => new CustomHttpMessageHandler());
             }
 #else
 null
@@ -48,13 +44,10 @@ null
             );
         builder.Services.AddViewModelsServices();
 
-        //builder.Configuration.AddJsonStream(GetResourceStream("appsettings.json"));
-        //builder.Services.AddBlazingPizzaServices(builder.Configuration.GetSection("BlazzingPizzaEndpoints"));
-
         return builder.Build();
     }
 
-     public static Stream GetResourceStream(string resourceRelativeUri)
+    public static Stream GetResourceStream(string resourceRelativeUri)
     {
         // resource like: images/icon-512.png <- file need to be embebed into the assembly
         // converto into: images.icon-512.png
